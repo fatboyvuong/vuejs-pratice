@@ -4,14 +4,43 @@
     <title>
         A Simple HTML Document
     </title>
-
-
 </head>
 <body>
+<!--normal binding-->
 <div id="app">
     {{ message }}
+    {{productId}}
+</div>
+<div id="app-2">
+    <span v-bind:title="message">
+        Hover your mouse over me for a few seconds
+        to see my dynamically bound title!
+    </span>
+</div>
+<!--binding condition-->
+<div id="app-3">
+    <span v-if="seen">Now you see me</span>
+</div>
+<!--using loops in Vue-->
+<div id="app-4">
+    <ul>
+        <li v-for="todo in todos">
+            {{ todo.text }}
+        </li>
+    </ul>
+</div>
+<!--using event on Vue-->
+<div id="app-5">
+    <p>{{ message }}</p>
+    <button v-on:click="reverseMessage">Reverse Message</button>
+</div>
+<!--using two different elements with same data-->
+<div id="app-6">
+    <p>{{ message }}</p>
+    <input v-model="message">
 </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="basicvue.js"></script>
+<script type="text/javascript" src="vuecomponent.js"></script>
 </html>
