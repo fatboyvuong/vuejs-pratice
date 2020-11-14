@@ -39,6 +39,17 @@
     <p>{{ message }}</p>
     <input v-model="message">
 </div>
+
+<div id="vue-component-1">
+    <ul>
+        <list-items
+                v-for="item in components"
+                v-bind:todo="item"
+                v-bind:key="item.id"
+        >
+        </list-items>
+    </ul>
+</div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script type="text/javascript" src="basicvue.js"></script>
